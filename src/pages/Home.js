@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { 
   View, 
@@ -10,6 +10,10 @@ import {
 } from 'react-native'
 
 export function Home() {
+  const [newSkill, setNewSkill] = useState();
+
+  
+
   return (
     <>
       <View style={styles.container}>
@@ -22,7 +26,8 @@ export function Home() {
         <TextInput 
           style={styles.input}
           placeholder="New Skill"
-          placeholderTextColor="#555"
+          placeholderTextColor="#444"
+          onChangeText={setNewSkill}
         />
 
         <TouchableOpacity 
@@ -33,7 +38,7 @@ export function Home() {
         </TouchableOpacity>
 
         <Text style={[styles.title, { marginTop: 50 }]}>
-          My Skills
+          {setNewSkill}
         </Text>
 
       </View>
